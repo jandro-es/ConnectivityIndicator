@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ConnectivityIndicator_Example' do
+  pod 'ConnectivityIndicator', :path => '../'
+
+  target 'ConnectivityIndicator_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

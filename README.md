@@ -1,6 +1,5 @@
 # ConnectivityIndicator
 
-[![CI Status](http://img.shields.io/travis/jandro-es/ConnectivityIndicator.svg?style=flat)](https://travis-ci.org/jandro-es/ConnectivityIndicator)
 [![Version](https://img.shields.io/cocoapods/v/ConnectivityIndicator.svg?style=flat)](http://cocoapods.org/pods/ConnectivityIndicator)
 [![License](https://img.shields.io/cocoapods/l/ConnectivityIndicator.svg?style=flat)](http://cocoapods.org/pods/ConnectivityIndicator)
 [![Platform](https://img.shields.io/cocoapods/p/ConnectivityIndicator.svg?style=flat)](http://cocoapods.org/pods/ConnectivityIndicator)
@@ -22,7 +21,7 @@ pod "ConnectivityIndicator"
 
 ## Author
 
-jandro-es, jandrob1978@gmail.com
+Filtercode Ltd <jandro@filtercode.com>
 
 ## License
 

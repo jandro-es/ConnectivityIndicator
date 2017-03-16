@@ -23,32 +23,46 @@ import QuartzCore
 
 open class ConnectivityIndicator: UIView {
   
+  // MARK: - Public properties
+  
+  /// Sets up the color of the elements
   @IBInspectable public var color: UIColor = .black {
     didSet {
       updateFrames()
     }
   }
+  
+  /// Speed of the animation in seconds
   @IBInspectable public var speed: Double = 1.0 {
     didSet {
       updateFrames()
     }
   }
+  
+  /// The width of the rings
   @IBInspectable public var lineWidth: CGFloat = 3.0 {
     didSet {
       updateFrames()
     }
   }
+  
+  /// If the control should be hidden when it's not animating
   @IBInspectable public var hidesWhenStopped: Bool = false {
     didSet {
       updateFrames()
     }
   }
   
+  /// Status property
   public var isAnimating = false
+  
+  // MARK: - Private properties
   
   private let coreLayer = CoreLayer()
   private let innerRingLayer = RingLayer()
   private let outerRingLayer = RingLayer()
+  
+  // MARK: - Initializers
   
   override public init(frame: CGRect) {
     super.init(frame: frame)
@@ -65,23 +79,23 @@ open class ConnectivityIndicator: UIView {
     commonInit()
   }
   
+  // MARK: - Private methods
+  
+  /// Sets up the different elements
   private func commonInit() {
     coreLayer.indicator = self
     innerRingLayer.indicator = self
     outerRingLayer.indicator = self
-    
     outerRingLayer.contentsScale = UIScreen.main.scale
     layer.addSublayer(outerRingLayer)
-    
     innerRingLayer.contentsScale = UIScreen.main.scale
     layer.addSublayer(innerRingLayer)
-    
     coreLayer.contentsScale = UIScreen.main.scale
     layer.addSublayer(coreLayer)
-    
     updateFrames()
   }
   
+  /// Updates the frames of the different elements
   private func updateFrames() {
     CATransaction.begin()
     CATransaction.setDisableActions(true)
@@ -100,6 +114,11 @@ open class ConnectivityIndicator: UIView {
     CATransaction.commit()
   }
   
+  /// Adds an opacity animatation to the given layer
+  ///
+  /// - Parameters:
+  ///   - layer: The CAShapeLayer to use
+  ///   - offset: The offset time for the animation
   private func addAlphaAnimation(for layer: CAShapeLayer, offset: Double) {
     let fadeOutIn = CABasicAnimation(keyPath: "opacity")
     fadeOutIn.fromValue = 1.0
@@ -111,7 +130,10 @@ open class ConnectivityIndicator: UIView {
     fadeOutIn.isRemovedOnCompletion = false
     layer.add(fadeOutIn, forKey: "animate_alpha")
   }
-    
+  
+  // MARK: - Public methods
+  
+  /// Starts the animation
   public func startAnimating() {
     guard isAnimating == false else {
       return
@@ -126,6 +148,7 @@ open class ConnectivityIndicator: UIView {
     isAnimating = true
   }
   
+  /// Stops the aninmation and hides the elements based on `hidesWhenStopped`
   public func stopAnimating() {
     coreLayer.removeAnimation(forKey: "animate_alpha")
     innerRingLayer.removeAnimation(forKey: "animate_alpha")
@@ -137,11 +160,13 @@ open class ConnectivityIndicator: UIView {
   }
 }
 
-open class CoreLayer: CAShapeLayer {
+// MARK: - Custom CAShapeLayers
+
+private class CoreLayer: CAShapeLayer {
   
   weak var indicator: ConnectivityIndicator?
   
-  open override func draw(in ctx: CGContext) {
+  fileprivate override func draw(in ctx: CGContext) {
     if let indicator = indicator {
       ctx.setFillColor(indicator.color.cgColor)
       let path = UIBezierPath(ovalIn: CGRect(x: bounds.origin.x + lineWidth, y: bounds.origin.y + lineWidth, width: bounds.width - lineWidth * 2, height: bounds.height - lineWidth * 2.0))
@@ -151,11 +176,11 @@ open class CoreLayer: CAShapeLayer {
   }
 }
 
-open class RingLayer: CAShapeLayer {
+private class RingLayer: CAShapeLayer {
   
   weak var indicator: ConnectivityIndicator?
   
-  open override func draw(in ctx: CGContext) {
+  fileprivate override func draw(in ctx: CGContext) {
     if let indicator = indicator {
       ctx.setStrokeColor(indicator.color.cgColor)
       ctx.setLineWidth(indicator.lineWidth)

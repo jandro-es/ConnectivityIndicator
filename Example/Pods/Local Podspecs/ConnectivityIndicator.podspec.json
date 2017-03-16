@@ -1,0 +1,22 @@
+{
+  "name": "ConnectivityIndicator",
+  "version": "0.1.0",
+  "summary": "A short description of ConnectivityIndicator.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/jandro-es/ConnectivityIndicator",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "jandro-es": "jandrob1978@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/jandro-es/ConnectivityIndicator.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ConnectivityIndicator/Classes/**/*"
+}

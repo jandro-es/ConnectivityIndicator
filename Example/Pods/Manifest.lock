@@ -1,0 +1,16 @@
+PODS:
+  - ConnectivityIndicator (0.1.0)
+
+DEPENDENCIES:
+  - ConnectivityIndicator (from `../`)
+
+EXTERNAL SOURCES:
+  ConnectivityIndicator:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ConnectivityIndicator: 2a4b6204745fb1719b10b3814eddbeaa9ac7bfe6
+
+PODFILE CHECKSUM: cb4b9bdf5da123fbcd7b98703ea32e0b59aa1485
+
+COCOAPODS: 1.2.0

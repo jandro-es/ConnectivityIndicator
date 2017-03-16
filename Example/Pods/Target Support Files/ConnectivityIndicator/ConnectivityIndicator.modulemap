@@ -1,0 +1,6 @@
+framework module ConnectivityIndicator {
+  umbrella header "ConnectivityIndicator-umbrella.h"
+
+  export *
+  module * { export * }
+}

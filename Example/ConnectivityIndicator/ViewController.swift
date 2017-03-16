@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 import UIKit
+import ConnectivityIndicator
 
 class ViewController: UIViewController {
   

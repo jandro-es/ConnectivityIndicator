@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/cocoapods/v/ConnectivityIndicator.svg?style=flat)](http://cocoapods.org/pods/ConnectivityIndicator)
 [![License](https://img.shields.io/cocoapods/l/ConnectivityIndicator.svg?style=flat)](http://cocoapods.org/pods/ConnectivityIndicator)
 [![Platform](https://img.shields.io/cocoapods/p/ConnectivityIndicator.svg?style=flat)](http://cocoapods.org/pods/ConnectivityIndicator)
-[![Build Status](https://travis-ci.org/jandro-es/ConnectivityIndicator.svg?branch=master)
+[![Build Status](https://travis-ci.org/jandro-es/ConnectivityIndicator.svg?branch=master)](https://travis-ci.org/jandro-es/ConnectivityIndicator)
 
 ## Example
 
